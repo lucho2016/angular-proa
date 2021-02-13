@@ -1,0 +1,48 @@
+
+<div id="main-wrapper">
+
+    <app-header></app-header>
+
+    <div class="page-wrapper">
+        <div class="container-fluid">
+            <br>
+            <!-- Breadcrumbs -->
+            <div class="row" >
+                <ol class="breadcrumb col-md-8">
+                    
+                </ol>
+                <ol class="breadcrumb col-md-4">
+                    <app-breadcrumbs class="row float-right"></app-breadcrumbs>
+                </ol>
+            </div>
+            
+
+            <!-- Mi sistema de rutas -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            
+                            <router-outlet></router-outlet>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer">
+            Municipio Viedma - Sistema PROA - 2021        
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+
+    </div>
+
+
+</div>

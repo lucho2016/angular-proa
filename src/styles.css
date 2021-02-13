@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+footer {
+    margin-left: auto;
+    margin-right: auto;    
+    position: fixed;
+   
+    bottom: 0;
+    width: 99%;
+    background-color:#ADD8E6;
+    color: black;
+    text-align: center;
+
+  }
+
+  body {
+    
+  }
+
+  
