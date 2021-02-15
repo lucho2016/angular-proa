@@ -6,29 +6,29 @@ import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 
 import { AppComponent } from './app.component';
-
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PrimengModule } from './primeng.module';
 
 
-import { ButtonModule } from 'primeng/button';
-import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NopagefoundComponent
+    NopagefoundComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    PrimengModule,
     BrowserAnimationsModule,
     PagesModule,
     AuthModule,
-    ButtonModule,
-    RippleModule,
+ 
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

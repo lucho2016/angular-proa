@@ -1,0 +1,24 @@
+<div>
+    <p-inputNumber 
+        type="integer" 
+        placeholder="Progreso"
+        (ngModelChange)="onChange($event)"
+        [ngClass]="{'p-invalid': progreso > 100 || progreso < 0 }"
+        [(ngModel)]="progreso"
+        [min]="0"
+        [max]="100">
+    </p-inputNumber>
+    &nbsp;
+    <button pButton pRipple 
+        type="button" 
+        icon="pi pi-plus" 
+        (click)="cambiarValor(5)"
+        [ngClass]="btnClass">
+    </button>
+    <button pButton pRipple 
+        type="button" 
+        icon="pi pi-minus"
+        (click)="cambiarValor(-5)"
+        [ngClass]="btnClass">
+    </button>
+</div>
