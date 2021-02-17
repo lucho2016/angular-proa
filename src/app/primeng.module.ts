@@ -5,6 +5,8 @@ import { RippleModule } from 'primeng/ripple';
 import { ProgressBarModule } from 'primeng/progressbar';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputNumberModule} from 'primeng/inputnumber';
+import { MenubarModule } from 'primeng/menubar';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [],
@@ -14,7 +16,10 @@ import {InputNumberModule} from 'primeng/inputnumber';
     RippleModule,
     ProgressBarModule,
     InputTextModule,
-    InputNumberModule
+    InputNumberModule,
+    MenubarModule,
+    BreadcrumbModule
+    
 
   ],
   exports: [
@@ -23,7 +28,9 @@ import {InputNumberModule} from 'primeng/inputnumber';
     RippleModule,
     ProgressBarModule,
     InputTextModule,
-    InputNumberModule
+    InputNumberModule,
+    MenubarModule,
+    BreadcrumbModule
   ],
 })
 export class PrimengModule { }
