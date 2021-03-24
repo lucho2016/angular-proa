@@ -9,41 +9,80 @@
                                 <div class="mb-5">
                                     <h3 class="h4 font-weight-bold text-theme">Registro</h3>
                                 </div>
-                                <h6 class="h5 mb-0">Just Do Register.</h6>
-                                <p class="text-muted mt-2 mb-5">If You Really Want To Know, Look In The Register.</p>
-                                <form>
+                                <h6 class="h5 mb-0">Formulario de registro de usuarios</h6>
+                                <p class="text-muted mt-2 mb-5">Desde este formulario podrá registrar los usuarios del sistema por lo que es muy importante que se lean los terminos que tiene que cumplir cada usuario.</p>
+                               
+                                <form
+                                    id="registerform"
+                                    autocomplete="off"
+                                    [formGroup]="registerForm"
+                                    (ngSubmit)="crearUsuario()">
                                     <div class="form-group">
-                                        <label for="yourName">Your name</label>
-                                        <input type="text" class="form-control" id="yourName" />
+                                        <label for="yourName">Nombre</label>
+                                        <input type="text" 
+                                                class="form-control" 
+                                                id="nombre"
+                                                placeholder="Nombre"
+                                                formControlName="nombre" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" />
+                                        <label for="exampleInputEmail1">correo</label>
+                                        <input type="correo" 
+                                                class="form-control" 
+                                                id="correo"
+                                                placeholder="correo"
+                                                formControlName="correo" />
                                     </div>
-                                    <div class="form-group mb-5">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" />
+                                    <div class="form-group ">
+                                        <label for="Password">Password</label>
+                                        <input type="password" 
+                                                class="form-control" 
+                                                id="Password" 
+                                                placeholder="password"
+                                                formControlName="password"/>
                                     </div>
-                                    <button type="submit" class="btn btn-theme">Register</button>
+                                    <div class="form-group">
+                                        <label for="password_confirmation">Confirmar Password</label>
+                                        <input type="password" 
+                                                class="form-control" 
+                                                id="password_confirmation" 
+                                                placeholder="password_confirmation"
+                                                formControlName="password_confirmation" />
+                                    </div>
+                                    <br>
+                                    <div class="form-group row mb-5">
+                                        <div class="col-md-12">
+                                            <div class="checkbox checkbox-primary p-t-0">
+                                                <input id="terminos" 
+                                                       type="checkbox"
+                                                       formControlName="terminos">
+                
+                                                <label for="terminos">&nbsp; Estoy de acuerdo con los <a href="#">Terminos</a></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="this.registerForm.invalid && this.formSubmitted " >
+                                        <div class="alert alert-danger" role="alert">
+                                        <p *ngIf="campoNoValido('nombre')">* El nombre es obligatorio</p>
+                                        <p *ngIf="campoNoValido('correo')">* El correo es obligatorio y tiene que ser válido</p>
+                                        <p *ngIf="contrasenasNoValidas()">* Las contraseñas deben ser iguales</p> 
+                                        <p *ngIf="aceptaTerminos()">* Debe de aceptar los términos de uso</p>
+                                        </div>
+                                    </div>
+                                   
+                                    <button type="submit" class="btn btn-theme">Registrarme</button>
                                 </form>
                             </div>
                         </div>
                         <div class="col-lg-6 d-none d-lg-inline-block">
-                            <div class="account-block rounded-right">
-                                <div class="overlay rounded-right"></div>
-                                <div class="account-testimonial">
-                                    <h4 class="text-white mb-4">This beautiful theme yours!</h4>
-                                    <p class="lead text-white">"Best investment i made for a long time. Can only recommend it for other users."</p>
-                                    <p>- Admin User</p>
-                                </div>
-                            </div>
+                            <img src="../../../assets/images/familia_register.jpg" class="img-fluid" id="foto_mia" >
                         </div>
                     </div>
                 </div>
                 <!-- end card-body -->
             </div>
-            <!-- end card -->
-            <p class="text-muted text-center mt-3 mb-0">Already have an account? <a href="login.html" class="text-primary ml-1">login</a></p>
+
             <!-- end row -->
         </div>
         <!-- end col -->

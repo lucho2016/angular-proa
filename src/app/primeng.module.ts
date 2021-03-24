@@ -7,6 +7,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {InputNumberModule} from 'primeng/inputnumber';
 import { MenubarModule } from 'primeng/menubar';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
+import {PasswordModule} from 'primeng/password';
 
 @NgModule({
   declarations: [],
@@ -18,7 +19,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     InputTextModule,
     InputNumberModule,
     MenubarModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    PasswordModule,
     
 
   ],
@@ -30,7 +32,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     InputTextModule,
     InputNumberModule,
     MenubarModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    PasswordModule,
   ],
 })
 export class PrimengModule { }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
+import { UsuarioService } from '../../services/usuario.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,6 +13,9 @@ import { PrimeNGConfig } from 'primeng/api';
 
 export class HeaderComponent implements OnInit {
     items: MenuItem[];
+
+    constructor( private usuarioService: UsuarioService,
+                 private router: Router){}
 
     ngOnInit() {
         this.items = [
@@ -70,13 +75,13 @@ export class HeaderComponent implements OnInit {
                 ]
             },
             {
-                label:'Users',
+                label:'Usuario',
                 icon:'pi pi-fw pi-user',
                 items:[
                     {
-                        label:'New',
+                        label:'Registrar',
                         icon:'pi pi-fw pi-user-plus',
-
+                        routerLink: './register'
                     },
                     {
                         label:'Delete',
@@ -140,9 +145,16 @@ export class HeaderComponent implements OnInit {
             {
                 label:'Salir',
                 icon:'pi pi-fw pi-power-off',
-                routerLink: '/login'
+                command: () => {
+                    this.logout();
+                }
             }
         ];
-    }    
+    }  
+    
+    logout() {
+        this.usuarioService.logout();
+        this.router.navigateByUrl('/login');
+    }
 
 }

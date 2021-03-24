@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
@@ -29,6 +30,9 @@ import { PrimengModule } from './primeng.module';
     AuthModule,
  
     
+  ],
+  exports: [
+    PrimengModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
