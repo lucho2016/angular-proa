@@ -3,22 +3,35 @@ import { MenuItem } from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
 import { UsuarioService } from '../../services/usuario.service';
 import { Router } from '@angular/router';
+import { Usuario } from '../../models/usuario.model';
 
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: [ './header.component.css' ]
+  
  })
 
 export class HeaderComponent implements OnInit {
     items: MenuItem[];
+    public usuario: Usuario;
+    public imagen_mod: string;
 
     constructor( private usuarioService: UsuarioService,
-                 private router: Router){}
+                 private router: Router){
+                    this.usuario = usuarioService.usuario;
+                    
+                 if(this.usuario.imagen =='http://127.0.0.1:8000/img'){
+                        this.usuario.imagen = '../../../assets/images/no-img.jpg';
+                    }else{
+                         this.usuario.imagen;
+                    } 
+                }
 
     ngOnInit() {
-        this.items = [
+        
+          this.items = [
             {
                 label:'File',
                 icon:'pi pi-fw pi-file',
@@ -84,8 +97,9 @@ export class HeaderComponent implements OnInit {
                         routerLink: './register'
                     },
                     {
-                        label:'Delete',
+                        label:'Mi perfil',
                         icon:'pi pi-fw pi-user-minus',
+                        routerLink: './perfil'
 
                     },
                     {

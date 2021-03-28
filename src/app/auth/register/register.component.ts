@@ -37,32 +37,17 @@ export class RegisterComponent {
     
     this.UsuarioService.crearUsuario( this.registerForm.value )
       .subscribe( resp => {
+        
         Swal.fire('Operación exitosa', 'Usuario creado correctamente!!' ,'success');
       }, (err) => {
-            // 1 - Crea una matriz vacía para almacenar errores
-            const errors = [];
-             // 2 - compruebe si el objeto de error está presente en la respuesta
-              if (err.error) {
-                  // 3 - Empuje el mensaje de error principal a la matriz de errores
-                  errors.push(err.error.error);
-      
-                    // 5 - Para cada propiedad de error (que es un campo de formulario
-                    for (const property in err.error.error) {
-                        // 6 - Extrae su matriz de errores
-                        const propertyErrors: Array<string> = err.error.error[property];
-              
-                        // 7 - Empuje todos los errores de la matriz a la matriz de errores
-                        propertyErrors.forEach(err => errors.push(err));
-                     }
-              }
-
-              for (let mens of errors){
-                  Swal.fire({
-                  title: 'error', 
-                  text: mens,
-                  icon:'error',
-                });
-              }
+        
+        if(err.error.error){
+           Swal.fire('Error!!', err.error.error ,'error');
+        }
+ 
+        if(err.error.error.correo){
+          Swal.fire('Error!!', err.error.error.correo[0] ,'error');
+        }
       });
     
   }

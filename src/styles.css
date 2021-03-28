@@ -8,7 +8,7 @@ footer {
     position: fixed;
    
     bottom: 0;
-    width: 99%;
+    width: 100%;
     background-color:#ADD8E6;
     color: black;
     text-align: center;
@@ -17,4 +17,9 @@ footer {
 
   body { background-color: #f0f5f5; }
 
-  
+  .img-avatar {
+    height: 250px;
+    width: 250px;
+  }
+
+ 

@@ -2,8 +2,11 @@
 
 
 <p-menubar [model]="items" [style]="{'color': 'blue'}">
+
   <div>
-      <input type="text" pInputText placeholder="Search">
-      <button type="button" pButton label="Logout" icon="pi pi-power-off" style="margin-left:.25em"></button>
+    <input type="text" pInputText placeholder="Search">
+    <button type="button" pButton label="Salir" icon="pi pi-power-off" class="p-button-success" style="margin-left:.25em"></button>
+    <b style="color:green;">&nbsp; &nbsp;&nbsp;Usuario:  {{usuario.nombre}}&nbsp;&nbsp;</b>
+    <img  [src]= usuario.imagen height="40" class="p-mr-2">
   </div>
 </p-menubar>

@@ -8,6 +8,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
 import { PagesComponent } from './pages.component';
 import { RegisterComponent } from '../auth/register/register.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
     { 
@@ -19,6 +20,7 @@ const routes: Routes = [
           { path: 'register', component: RegisterComponent, data: { titulo: 'Registro de Usuarios'} },
           { path: 'progress', component: ProgressComponent, data: { titulo: 'Barra de Progreso'} },
           { path: 'grafica1', component: Grafica1Component, data: { titulo: 'Gráfica Donas'} },
+          { path: 'perfil', component: PerfilComponent, data: { titulo: 'Mi Perfil'} },
          // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         ]
     }, 

@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="col-md-1 col align-self-end"></div>
+    <div class="col-md-5 col align-self-start">
+        <div class="card">
+            <div class="card-header">
+                Mis datos
+            </div>
+            <div class="card-body">
+
+                <form 
+                    [formGroup]="perfilForm"
+                    (submit)="actualizarPerfil()">
+
+                    <div class="form-group ">
+                    <label for="exampleInputEmail1">Nombre de Usuario</label>
+                    <input  type="text" 
+                            class="form-control" 
+                            id="nombre" 
+                            aria-describedby="Nombre de Usuario" 
+                            placeholder="Nombre del usuario"
+                            formControlName="nombre">
+                    </div>
+                    <div class="form-group ">
+                    <label for="exampleInputPassword1">Correo</label>
+                    <input type="email" 
+                            class="form-control" 
+                            id="correo" 
+                            placeholder="Correo Electrónico"
+                            formControlName="correo">
+                    </div>
+                    
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Administrador</label>
+                            <select ng-disabled="esAdministador='false'" 
+                                    class="form-control" 
+                                    id="esAdministrador"
+                                    formControlName="esAdministrador"
+                                    data-toggle="tooltip" 
+                                    data-placement="right" 
+                                    title="Debe ser administador para modificar este campo"
+                                     >
+                                    
+                              <option>true</option>
+                              <option>false</option>
+                              
+                            </select>
+                          </div> 
+
+                    
+                    <br>
+                    <button type="submit" 
+                            class="btn btn-success"
+                            [disabled]="perfilForm.invalid">
+                            Guardar cambios
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-header">
+                Fotografía
+            </div>
+            <div class="card-body">
+                <div>
+                    <input type="file"
+                    accept=".jpg,.png,.jpeg,.gif"
+                    (change)="cambiarImagen($event.target.files[0])">
+                </div>
+                <br>
+
+                <div class="text-center">
+                    <img *ngIf="!imgTemp" [src]="usuario.imagen" class="img-avatar">
+                    <img *ngIf="imgTemp" [src]="imgTemp" class="img-avatar">
+                </div>
+                
+                <br>
+                <br>
+                
+                <button type="submit" 
+                    class="btn btn-success"
+                    [disabled]="!imagenSubir"
+                    (click)="subirImagen()">
+                    Cambiar Imagen
+                </button>
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1 col align-self-end"></div>
+
+</div>
+
+
+
